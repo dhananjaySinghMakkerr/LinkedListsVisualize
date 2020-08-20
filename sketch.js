@@ -7,6 +7,7 @@ var arr = [];
 var ll1 = new LinkedLists();
 var arlength = 0;
 var rectp = new rectangle(76, 125);
+var status = 0;
 //var arRect = new arRectangle(x, y);
 
 function rectangle(x, y) {
@@ -88,7 +89,7 @@ function LinkedLists() {
   }
 
   this.dispWhileInsert = function(z) {
-    if(z==-1){
+    if (z == -1) {
       ll1.disp();
     }
     let p = this.head;
@@ -160,7 +161,7 @@ function LinkedLists() {
 
     }
   }
-  this.dispNodeByNode = function(p) {
+  this.dispNodeByNode = function(p,col) {
     //let p = this.head;
     //xCoordp = 42;
     //yCoordp = 25;
@@ -169,7 +170,7 @@ function LinkedLists() {
     //delay(1000);
     strokeWeight(3);
     stroke(100, 100, 0);
-    fill(255);
+    fill(col);
     rect(xCoordp, rectang.y, rectang.width, rectang.height);
     line(rectang.xLineBeg, rectang.y, rectang.xLineBeg, rectang.yLineEnd);
     fill(255);
@@ -222,7 +223,7 @@ function LinkedLists() {
       fill(100);
     rect(arRect.x, arRect.y, arRect.width, arRect.height);
     textAlign(CENTER);
-    if(count==0)
+    if (count == 0)
       arr[i] = p.data;
     if (count == 0) {
       text(arr[i], arRect.x + (arRect.width / 2), arRect.y + (arRect.height / 2));
@@ -256,37 +257,35 @@ function LinkedLists() {
     //arr=[];
     return this.head;
   }
-  this.insertAtBeg=function (data)
-  {
+  this.insertAtBeg = function(data) {
 
-    var rectpp=new rectangle(30,150);
-    var temp=new Node(data,66,50);
-    var p=this.head;
+    var rectpp = new rectangle(30, 150);
+    var temp = new Node(data, 66, 50);
+    var p = this.head;
 
-    while(p!=null)
-    {
-      p.x=p.x+(rectpp.width) + 30;
-      p=p.next;
+    while (p != null) {
+      p.x = p.x + (rectpp.width) + 30;
+      p = p.next;
     }
 
-    temp.next=this.head;
+    temp.next = this.head;
     console.log(this.head);
-    this.head=temp;
-    p=this.head.next;
-      background(0);
-      stroke(100,100,0);
-      strokeWeight(3);
-      fill(255, 0, 210, 200);
-      rect(rectpp.x,rectpp.y,rectpp.width,rectpp.height);
-      line(rectpp.xLineBeg,rectpp.y,rectpp.xLineBeg,rectpp.yLineEnd);
+    this.head = temp;
+    p = this.head.next;
+    background(0);
+    stroke(100, 100, 0);
+    strokeWeight(3);
+    fill(255, 0, 210, 200);
+    rect(rectpp.x, rectpp.y, rectpp.width, rectpp.height);
+    line(rectpp.xLineBeg, rectpp.y, rectpp.xLineBeg, rectpp.yLineEnd);
 
 
-      //let i=1;
+    //let i=1;
     //  background(0);
     ll1.disp();
     fill(0);
     stroke(0);
-    rect(42,25,rectpp.width,rectpp.height);
+    rect(42, 25, rectpp.width, rectpp.height);
     strokeWeight(3);
     stroke(100, 100, 0);
     //line(rectpp.x+rectpp.width,rectpp.y+(rectpp.height/2),this.head.next.x,this.head.next.y+(rectpp.height/2));
@@ -294,197 +293,287 @@ function LinkedLists() {
     textAlign(CENTER);
     fill(0);
     textSize(20);
-    text(this.head.data,rectpp.x+24,rectpp.y+25);
-      setTimeout(function()
-      {
-        ll1.disp();
-        fill(0);
-        stroke(0);
-        //line(rectpp.x+rectpp.width,rectpp.y+(rectpp.height/2),this.head.next.x,this.head.next.y+(rectpp.height/2));
-        rect(rectpp.x,rectpp.y,rectpp.width,rectpp.height);
-        line(rectpp.xLineBeg,rectpp.y,rectpp.xLineBeg,rectpp.yLineEnd);
-        //line(this.head.next.x,this.head.next.y+(this.height),rectpp.x+rectpp.width,rectpp.y+(rectpp.height/2));
+    text(this.head.data, rectpp.x + 24, rectpp.y + 25);
+    setTimeout(function() {
+      ll1.disp();
+      fill(0);
+      stroke(0);
+      //line(rectpp.x+rectpp.width,rectpp.y+(rectpp.height/2),this.head.next.x,this.head.next.y+(rectpp.height/2));
+      if(count!=0){
+      rect(rectpp.x, rectpp.y, rectpp.width, rectpp.height);
+      line(rectpp.xLineBeg, rectpp.y, rectpp.xLineBeg, rectpp.yLineEnd);}
+      //line(this.head.next.x,this.head.next.y+(this.height),rectpp.x+rectpp.width,rectpp.y+(rectpp.height/2));
 
       //  line(rectpp.x+rectpp.width,rectpp.y+(rectpp.height/2),this.head.next.x,this.head.next.y+(rectpp.height/2));
-    },1500);
+    }, 1500);
 
 
 
-//line(rectpp.x+rectpp.width,rectpp.y+(rectpp.height/2),this.head.next.x,this.head.next.y+(rectpp.height/2));
-      // /ll1.disp();
-      p=p.next;
+    //line(rectpp.x+rectpp.width,rectpp.y+(rectpp.height/2),this.head.next.x,this.head.next.y+(rectpp.height/2));
+    // /ll1.disp();
+    p = p.next;
 
     //i++;
+if(this.head!=null)
+      rectp.x = rectp.x + (rectp.width + 30) * 1;
+      rectp.xLineBeg = rectp.xLineBeg + ((rectp.width + 30) * 1);
 
-    rectp.x = rectp.x+(rectp.width + 30)*1;
-    rectp.xLineBeg=rectp.xLineBeg + ((rectp.width + 30) *1);
     //count++;
 
   }
-}
 
 
-function Node(data, x, y) {
-  this.data = data;
-  this.next = null;
-  this.x = x;
-  this.y = y;
-}
-
-var ll1 = new LinkedLists();
-var z = 0;
-var cnv;
-function centerCanvas() {
-  var xCnv = (windowWidth - width) / 2;
-  var yCnv = (windowHeight - height) / 2;
-  cnv.position(xCnv, yCnv);
-}
-
-
-function windowResized() {
-  centerCanvas();
-}
-function setup() {
-  cnv=createCanvas(800, 600);
-  centerCanvas();
-  background(0);
-  stroke(255);
-  frameRate(1);
-  var button=createButton("Reverse");
-  button.mousePressed(reverseMouse);
-  var button1=createButton("display");
-  button1.mousePressed(display);
-  var button2=createButton("Insert At End");
-  button2.mousePressed(drawp);
-  var button3=createButton("Insert At Beg");
-  button3.mousePressed(insertAtBeg);
-}
-
-function insertAtBeg()
-{
-  var m;
-  m = prompt("enter the element");
-  ll1.insertAtBeg(m);
-}
-function drawp() {
-  background(0);
-  var z=0;
-  //stroke(255);
-  //  ll1.disp();
-  //var i;
-  //z=prompt("Enter element to add!");
-
-
-
-  //  ll1.dispWhileInsert();
-
-  if (z != -1) {
-    z = prompt("enter the element");
-    if (z != -1)
-      ll1.insert(z);
-    ll1.dispWhileInsert(z);
   }
 
 
+  function Node(data, x, y) {
+    this.data = data;
+    this.next = null;
+    this.x = x;
+    this.y = y;
+  }
+
+  var ll1 = new LinkedLists();
+  var z = 0;
+  var cnv;
+
+  function centerCanvas() {
+    var xCnv = (windowWidth - width) / 2;
+    var yCnv = (windowHeight - height) / 2;
+    cnv.position(xCnv, yCnv);
+  }
 
 
-/*if(mousePressed()){
+  function windowResized() {
+    centerCanvas();
+  }
+
+  function setup() {
+    cnv = createCanvas(800, 600);
+    centerCanvas();
+    background(0);
+    stroke(255);
+    frameRate(1);
+    var button = createButton("Reverse");
+    button.mousePressed(reverseMouse);
+    var button1 = createButton("display");
+    button1.mousePressed(display);
+    var button2 = createButton("Insert At End");
+    button2.mousePressed(drawp);
+    var button3 = createButton("Insert At Beg");
+    button3.mousePressed(insertAtBeg);
+    var button4 = createButton("Try Once More");
+    button4.mousePressed(tryAgain);
+    var button5 = createButton("Check If Sorted!");
+    button5.mousePressed(checkSorted);
+  }
+
+function delay2(p,i,t){
+  setTimeout(function()
+{
+  if(i==1)
+  {
+    stroke(255);
+    strokeWeight(3);
+    textAlign(CENTER);
+    text("Here the light colour indicates the tailing pointer ",300,400)
+    text("The dark colour indicates the pointer used for traversal ",300,500)
+  }
+  if(i%2==0)
+  {
+  ll1.dispNodeByNode(p,'#fabea7');
+}
+  else
+  {
+  ll1.dispNodeByNode(p,"#fbe2e5");}
+  if(t.data<=p.data&&t)
+  {
+    text(t.data+"<"+p.data,(100+(i*100)),300);
+    //return status;
+  }
+  else
+  {
+    text("Not Sorted!",100+(i*100),300);
+    status=-1;
+    //return status;
+  }
+},1000*i);
+}
+
+function checkSorted(){
   background(0);
-}*/
+  var i=1;
 
+  var p=ll1.head;
+  var t=null;
 
-  ////  var ll1 = new LinkedLists();
-  //var no = Math.floor(Math.random() * 10);
-  /*for (let i = 0; i < no; i++) {
-    ll1.insert(Math.floor(Math.random() * 10));
-  }*/
+  while(p!=null)
+  {
 
-}
+    delay2(p,i,t,status);
 
-
-var countp = 0;
-
-function delay(p, k, i, count) {
-  setTimeout(function() {
-    // Add tasks to do
-
-    ll1.dispNodeByNode(p);
-
-    ll1.reverseNodeValDisp(p, i, count);
-    //i++;
-  }, 1000 * k);
-}
-//var pt = ll1.head;
-//var countp=0;
-function reverseMouse() {
-  //ll1.disp();
-  //let p = ll1.head;
-  var j;
-  xCoordp = 42;
-  yCoordp = 25;
-  var i=0;
-  var k=1;
-
-  var pt = ll1.head;
-
-  //background(0);
-  //  var count=0;
-
-  //ll1.dispNodeByNode(ll1.head);
-  /*if(countp==0)
-     background(0);*/
-
-  //p=p.next;
-
-  while (pt != null) {
-
-    console.log(pt);
-
-    delay(pt, k, i, countp);
-    //p=p.next;
+    /*if(status==-1){
+      break;
+    }*/
     i++;
-    k++;
-    pt = pt.next;
+    t=p;
+  p=p.next;
+
+    /*if(t.data<=p.data)
+    {
+      text(t.data+"<"+p.data,300,300);
+    }
+    else
+    {
+      text("Not Sorted!",300,300);
+      break;
+    }*/
+
   }
-  countp++;
-  //ll1.reverseArr();
-  //background(0);
-
-  /*  x=100;
-    y=200;*/
-  /*let arR=new arRectangle(300,400);*/
-
-  x = x - 50;
-  setTimeout(function() {
-    ll1.head=ll1.reverseArr(i);
-  }, 1000 * k);
-
-
-  //ll1.reverseNodeVal();
-  //ll1.disp();
-
-  noLoop();
-
 }
-function display()
-{
-  console.log(ll1.head);
-  arr=[];
-  countp=0;
-  x = 100;
-  y = 200;
-  background(0);
+
+
+
+
+  function tryAgain() {
+    background(0);
+    ll1.head = null;
+    console.log(ll1.head);
+    rectp.x = 76;
+    rectp.y = 125;
+    rectp.xLineBeg = rectp.xLineBeg - ((rectp.width + 30) * 1);
+    count = 0;
+  }
+
+  function insertAtBeg() {
+    var m;
+    m = prompt("enter the element");
+    ll1.insertAtBeg(m);
+  }
+
+  function drawp() {
+    background(0);
+    var z = 0;
+    //stroke(255);
+    //  ll1.disp();
+    //var i;
+    //z=prompt("Enter element to add!");
+
+
+
+    //  ll1.dispWhileInsert();
+
+    if (z != -1) {
+      z = prompt("enter the element");
+      if (z != -1)
+        ll1.insert(z);
+      ll1.dispWhileInsert(z);
+    }
+
+
+
+
+    /*if(mousePressed()){
+      background(0);
+    }*/
+
+
+    ////  var ll1 = new LinkedLists();
+    //var no = Math.floor(Math.random() * 10);
+    /*for (let i = 0; i < no; i++) {
+      ll1.insert(Math.floor(Math.random() * 10));
+    }*/
+
+  }
+
+
+  var countp = 0;
+
+  function delay(p, k, i, count) {
+    setTimeout(function() {
+      // Add tasks to do
+
+      ll1.dispNodeByNode(p,255);
+
+      ll1.reverseNodeValDisp(p, i, count);
+      //i++;
+    }, 1000 * k);
+  }
+  //var pt = ll1.head;
+  //var countp=0;
+  function reverseMouse() {
+    //ll1.disp();
+    //let p = ll1.head;
+    var j;
+    xCoordp = 42;
+    yCoordp = 25;
+    var i = 0;
+    var k = 1;
+
+    var pt = ll1.head;
+
+    //background(0);
+    //  var count=0;
+
+    //ll1.dispNodeByNode(ll1.head);
+    /*if(countp==0)
+       background(0);*/
+
+    //p=p.next;
+
+    while (pt != null) {
+
+      console.log(pt);
+
+      delay(pt, k, i, countp);
+      //p=p.next;
+      i++;
+      k++;
+      pt = pt.next;
+    }
+    countp++;
+    //ll1.reverseArr();
+    //background(0);
+
+    /*  x=100;
+      y=200;*/
+    /*let arR=new arRectangle(300,400);*/
+
+    x = x - 50;
+    setTimeout(function() {
+      ll1.head = ll1.reverseArr(i);
+    }, 1000 * k);
+
+
+    //ll1.reverseNodeVal();
+    //ll1.disp();
+
+    noLoop();
+
+  }
+
+  function display() {
+    console.log(ll1.head);
+    arr = [];
+    countp = 0;
+    x = 100;
+    y = 200;
+    xCoordp=42;
+    time=1;
+    stack=[];
+    stack2=[];
+    background(0);
+    //ll1.reverse();
+    ll1.disp();
+  }
+  /*ll1.reverseNodeVal();
+  ll1.disp();*/
+  /*var ele=document.querySelector(".insert")
+  ele.addeventListener("click",function()
+  {
+    console.log(ll1.head);
+  });*/
+
+  //console.log(ll1);
   //ll1.reverse();
-  ll1.disp();
-}
-/*ll1.reverseNodeVal();
-ll1.disp();*/
-/*var ele=document.querySelector(".insert")
-ele.addeventListener("click",function()
-{
-  console.log(ll1.head);
-});*/
-
-//console.log(ll1);
-//ll1.reverse();
-//  console.log(ll1);
+  //  console.log(ll1);
