@@ -408,6 +408,7 @@ function delay2(p,i,t){
 }
 
 function checkSorted(){
+  ll1.disp();
   background(0);
   var i=1;
 
