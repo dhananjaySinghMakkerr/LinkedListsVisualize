@@ -386,9 +386,12 @@ function delay2(p,i,t){
   else
   {
   ll1.dispNodeByNode(p,"#fbe2e5");}
-  if(t.data<=p.data&&t)
-  {
+  if(t.data<=p.data||t==null)
+  { 
+    if(t!=null)
+    {
     text(t.data+"<"+p.data,(100+(i*100)),300);
+    }
     //return status;
   }
   else
