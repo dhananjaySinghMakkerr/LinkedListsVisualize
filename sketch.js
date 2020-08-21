@@ -48,7 +48,7 @@ function LinkedLists() {
       stroke(100, 100, 0);
       fill(255);
       rect(rectp.x, rectp.y, rectp.width, rectp.height);
-      line(rectp.xLineBeg,rectp.y,rectp.xLineBeg,rectp.y+rectp.y+rectp.height);
+      line(rectp.xLineBeg,rectp.y,rectp.xLineBeg,rectp.y+rectp.height);
       line(66, 50, rectp.x, rectp.y + (rectp.height / 2));
       line(rectp.x + rectp.width, rectp.y, rectp.x + (2 / 3 * rectp.width), rectp.y + rectp.height);
       fill(255);
