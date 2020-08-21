@@ -385,7 +385,8 @@ function delay2(p,i,t){
 }
   else
   {
-  ll1.dispNodeByNode(p,"#fbe2e5");}
+  ll1.dispNodeByNode(p,"#fbe2e5");
+  }
   if(t.data<=p.data||t==null)
   { 
     if(t!=null)
@@ -394,7 +395,7 @@ function delay2(p,i,t){
     }
     //return status;
   }
-  else
+  else if(t.data>p.data)
   {
     text("Not Sorted!",100+(i*100),300);
     status=-1;
