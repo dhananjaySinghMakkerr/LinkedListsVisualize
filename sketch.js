@@ -387,7 +387,7 @@ function delay2(p,i,t){
   {
   ll1.dispNodeByNode(p,"#fbe2e5");
   }
-  if(t.data<=p.data||t==null)
+  if(t.data<=p.data)
   { 
     if(t!=null)
     {
