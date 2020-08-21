@@ -72,15 +72,11 @@ function LinkedLists() {
       stroke(100, 100, 0);
       fill(255);
       rect(rectp.x + ((rectp.width + 30) * count), rectp.y, rectp.width, rectp.height);
-      if(rectp.xLineBeg<rectp.x)
-      {
-        //rectp.x=rectp.x+((rectp.width + 30) * 1);
-        line(rectp.xLineBeg + ((rectp.width + 30) * (count+1)), rectp.y, rectp.xLineBeg + ((rectp.width + 30) * (count+1)), rectp.yLineEnd);
-      }
-      else{
+    
+     
+     // line(rectp.xLineBeg + ((rectp.width + 30) * count), rectp.y, rectp.xLineBeg + ((rectp.width + 30) * count), rectp.yLineEnd);
+      
       line(rectp.xLineBeg + ((rectp.width + 30) * count), rectp.y, rectp.xLineBeg + ((rectp.width + 30) * count), rectp.yLineEnd);
-      }
-      //line(rectp.xLineBeg + ((rectp.width + 30) * count), rectp.y, rectp.xLineBeg + ((rectp.width + 30) * count), rectp.yLineEnd);
       ellipse(p.x + 36, p.y, 4);
       line(p.x + 2 / 3 * (rectp.width) - 1 / 6 * (rectp.width), p.y, rectp.x + ((rectp.width + 30) * count), rectp.y + (rectp.height / 2));
       line(rectp.x + rectp.width + ((rectp.width + 30) * count), rectp.y, rectp.x + (2 / 3 * rectp.width) + ((rectp.width) + 30) * count, rectp.y + rectp.height);
@@ -397,13 +393,12 @@ function delay2(p,i,t){
   }
   if(t.data<=p.data)
   { 
-    if(t!=null)
-    {
+   
     text(t.data+"<"+p.data,(100+(i*100)),300);
-    }
+    
     //return status;
   }
-  else if(t.data>p.data)
+  else
   {
     text("Not Sorted!",100+(i*100),300);
     status=-1;
