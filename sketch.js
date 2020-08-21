@@ -449,8 +449,8 @@ function checkSorted(){
     console.log(ll1.head);
     rectp.x = 76;
     rectp.y = 125;
-    rectp.xLineBeg = rectp.xLineBeg - ((rectp.width + 30) * 1);
-    count = 0;
+    //rectp.xLineBeg = rectp.xLineBeg - ((rectp.width + 30) * 1);
+    count = 1;
   }
 
   function insertAtBeg() {
