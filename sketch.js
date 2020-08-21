@@ -75,7 +75,10 @@ function LinkedLists() {
     
      
      // line(rectp.xLineBeg + ((rectp.width + 30) * count), rectp.y, rectp.xLineBeg + ((rectp.width + 30) * count), rectp.yLineEnd);
-      
+      if((rectp.xLineBeg + ((rectp.width + 30) * count)>(rectp.x + rectp.width + ((rectp.width + 30) * count+2/3*(rectp.width)))
+         {
+             line(rectp.x + rectp.width + ((rectp.width + 30) * count+2/3*(rectp.width), rectp.y,rectp.x + rectp.width + ((rectp.width + 30) * count+2/3*(rectp.width),rectp.yLineEnd);
+         }
       line(rectp.xLineBeg + ((rectp.width + 30) * count), rectp.y, rectp.xLineBeg + ((rectp.width + 30) * count), rectp.yLineEnd);
       ellipse(p.x + 36, p.y, 4);
       line(p.x + 2 / 3 * (rectp.width) - 1 / 6 * (rectp.width), p.y, rectp.x + ((rectp.width + 30) * count), rectp.y + (rectp.height / 2));
