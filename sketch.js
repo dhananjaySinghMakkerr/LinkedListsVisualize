@@ -75,7 +75,7 @@ function LinkedLists() {
     
      
      // line(rectp.xLineBeg + ((rectp.width + 30) * count), rectp.y, rectp.xLineBeg + ((rectp.width + 30) * count), rectp.yLineEnd);
-      if((rectp.xLineBeg + ((rectp.width + 30) * count)>(rectp.x + rectp.width + ((rectp.width + 30) * count+2/3*(rectp.width)))
+      if((rectp.xLineBeg + ((rectp.width + 30) * count)>(rectp.x + rectp.width + ((rectp.width + 30) * count+2/3*(rectp.width))))
          {
              line(rectp.x + rectp.width + ((rectp.width + 30) * count+2/3*(rectp.width), rectp.y,rectp.x + rectp.width + ((rectp.width + 30) * count+2/3*(rectp.width),rectp.yLineEnd);
          }
